@@ -29,6 +29,7 @@ console.log("Lab Started");
     
 }
 
+//function check is given number is prime or not
 function  isPrime(nNum) 
 {
     let bolResult = false;
@@ -70,15 +71,9 @@ function  isPrime(nNum)
        
 
 }
-// fizzBuzz();
-// for(let j=0;j<50;j++)
-// {
-//     if(isPrime(j))
-//     {
-//             console.log(` ${j} `);
-//     }
-// }
 
+
+//function takes any number and returns the next prime number
 function nextPrimeNumber(nToTest)
 {
     let counter = nToTest + 1 ;
@@ -98,4 +93,9 @@ function nextPrimeNumber(nToTest)
     
 }
 
+
+//Testing Fizz Buzz
+// fizzBuzz();
+
+//Testing Next Prime Number
 nextPrimeNumber(78);
