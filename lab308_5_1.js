@@ -68,5 +68,67 @@ return arrResult;
 //  getAvg(0,1,2,3,4,5,6,0);
 let x = ['CCCCCCCCCCCCCCCCCCCC','AA','BBBAAAABBB','AAAAAA'];
 //getLongestString(...x);
-
 console.log ( getStringLongerThan(0,...x) );
+// //************************************END PART ONE ************************************* */
+
+// //************************************ PART TWO ************************************* */
+  let userData =
+   [{ id: "42", name: "Bruce", occupation: "Knight", age: "41" },
+    { id: "48", name: "Barry", occupation: "Runner", age: "25" },
+    { id: "57", name: "Bob", occupation: "Fry Cook", age: "19" },
+    { id: "63", name: "Blaine", occupation: "Quiz Master", age: "58" },
+    { id: "7", name: "Bilbo", occupation: "None", age: "111" }]
+
+// Sort the array by age.
+console.log( userData);
+
+    userData.sort((a,b) => {
+    const ageA = parseInt( a.age);
+    const ageB = parseInt( b.age);
+    if(ageA < ageB)
+    {
+        return 1;
+    }
+    else if (ageA>ageB)
+    {
+        return -1;
+    }
+    return 0;
+    }
+);
+
+console.log(`<========= Sorted by age data =========>`);
+console.log(userData);
+
+// Filter the array to remove entries with an age greater than 50.
+let newUserData = userData.filter(
+    (user) => { 
+    if(parseInt(user.age) > 50) 
+        {return true;
+
+        } 
+        return false ;
+    }
+)
+console.log(`<========= age > 50 =========>`);
+console.log(newUserData);
+
+// Map the array to change the “occupation” key to “job” and increment every age by 1.
+const newUserDataMap = userData.map((x) => {
+    return {
+        id:x.id,
+        name:x.name,
+        job: x.occupation,
+        age: parseInt(x.age) + 1        
+    }    
+} )
+console.log(`<========= Mapping change occupation to job, and add 1 to age =========>`);
+console.log(newUserDataMap);
+
+// Use the reduce method to calculate the sum of the ages.
+const sumOfAges = userData.reduce((sumAges,user) => {return (sumAges += parseInt(user.age))},0);
+console.log(`<========= Reduce sum of ages =========>`);
+console.log(`Sum of all ages ==> ${sumOfAges}`);
+// Then use the result to calculate the average age.
+console.log(`<========= Average of ages =========>`);
+console.log(`Average of ages ==> ${sumOfAges/userData.length}`);
